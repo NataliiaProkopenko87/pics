@@ -1,9 +1,45 @@
 .image-list {
-    columns: 6 200px;
-    column-gap: 10px;
+  columns: 4 220px;
+  column-gap: 14px;
 }
 
-img {
-    width: 100%;
-    margin-bottom: 10px;
+.image-list-item {
+  break-inside: avoid;
+  margin-bottom: 14px;
+  animation: fadeUp 0.45s ease both;
+}
+
+/* Stagger each card's entry */
+.image-list-item:nth-child(1)  { animation-delay: 0.04s; }
+.image-list-item:nth-child(2)  { animation-delay: 0.08s; }
+.image-list-item:nth-child(3)  { animation-delay: 0.12s; }
+.image-list-item:nth-child(4)  { animation-delay: 0.16s; }
+.image-list-item:nth-child(5)  { animation-delay: 0.20s; }
+.image-list-item:nth-child(6)  { animation-delay: 0.24s; }
+.image-list-item:nth-child(7)  { animation-delay: 0.28s; }
+.image-list-item:nth-child(8)  { animation-delay: 0.32s; }
+.image-list-item:nth-child(n+9){ animation-delay: 0.36s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 100px 0;
+  color: var(--text-muted);
+}
+
+.empty-state p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+}
+
+.empty-state span {
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
